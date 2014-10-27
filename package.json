@@ -1,0 +1,24 @@
+{
+  "name": "my_chat_app",
+  "version": "0.0.0",
+  "description": "MyChatApp is a lightweight instant messaging app built on node.js.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OldGareBear/my_chat_app.git"
+  },
+  "author": "Gary Bethea",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/OldGareBear/my_chat_app/issues"
+  },
+  "homepage": "https://github.com/OldGareBear/my_chat_app",
+  "dependencies": {
+    "socket.io": "1.0.x",
+    "mime": "~1.2.7",
+    "node-static": "^0.7.4"
+  }
+}
