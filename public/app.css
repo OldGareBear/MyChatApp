@@ -21,11 +21,17 @@ form.send {
   margin: 30px auto;
 }
 
+form.nickname {
+  position: absolute;
+  top:25px;
+  right: 25px;
+}
+
 input#enter_message {
   width: 235px;
 }
 
-button#send {
+button {
   margin: auto auto;
   background-color: green;
   color: white;

@@ -19,18 +19,23 @@
     var chatUI = this;
 
     this.chat.socket.on("message", function(data) {
-      $("div.display").text(data.text);
+      $("div.display").append("<div>" + data.text + "<div>");
     });
   };
 
   ChatUI.prototype.setNickname = function() {
-    //
+    $("form.nickname").on("submit", function(event) {
+      event.preventDefault();
+      var nickName = $(event.target).val();
+      this.chat.socket.emit("changeNickname", { nickName: nickName });
+    });
   };
 
   var socket = io();
   var chat = new window.ChatApp.Chat(socket);
   var chatUI = new ChatUI(chat);
   chatUI.displayMessage();
+  chatUI.setNickname();
 
   $("form.send").on("submit", function(event) {
     event.preventDefault();
