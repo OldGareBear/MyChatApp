@@ -19,8 +19,12 @@
     var chatUI = this;
 
     this.chat.socket.on("message", function(data) {
-      $("div.display").text(chatUI.getInput());
+      $("div.display").text(data.text);
     });
+  };
+
+  ChatUI.prototype.setNickname = function() {
+    //
   };
 
   var socket = io();
@@ -34,7 +38,6 @@
     console.log("Text:" + chatUI.getInput());
 
     chatUI.sendMessage();
-    chat.sendMessage();
   });
 
 })();
