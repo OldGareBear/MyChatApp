@@ -24,10 +24,11 @@
   };
 
   ChatUI.prototype.setNickname = function() {
+    var chatUI = this;
     $("form.nickname").on("submit", function(event) {
       event.preventDefault();
-      var nickName = $(event.target).val();
-      this.chat.socket.emit("changeNickname", { nickName: nickName });
+      var nickName = $("form.nickname > input").val();
+      chatUI.chat.socket.emit("changeNickname", { nickName: nickName });
     });
   };
 
