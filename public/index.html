@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://cdn.socket.io/socket.io-1.1.0.js"></script>
+  <link rel="stylesheet" type="text/css" href="./app.css">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <h1 class="title">Chat App<h2>
+
+  <div class="display"></div>
+
+  <form class="send">
+    <label for="enter_message"></label>
+    <input type=text id="enter_message">
+    <button id="send">Send</button>
+  </form>
+</body>
+
+<script>
+$(function() {
+  var socket = io();
+  socket.on("startup", function(data) {
+    console.log(data);
+  });
+
+});
+</script>
+
+<script src="./javascripts/chat.js"></script>
+<script src="./javascripts/chat_ui.js"></script>
+
+</html>
+
