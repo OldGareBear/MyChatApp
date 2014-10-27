@@ -30,6 +30,10 @@
       var nickName = $("form.nickname > input").val();
       chatUI.chat.socket.emit("changeNickname", { nickName: nickName });
     });
+
+    this.chat.socket.on("invalidName", function(data) {
+      alert(data["error"]);
+    });
   };
 
   var socket = io();
